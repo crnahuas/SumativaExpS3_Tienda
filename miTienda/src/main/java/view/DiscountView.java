@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view;
 
 /**
- *
- * @author cristian
+ * Vista del estado de descuentos.
  */
 public class DiscountView {
-    
+
+    public void render(String discountSummary) {
+        System.out.println("=== Descuentos ===");
+        System.out.println(discountSummary);
+        System.out.println();
+    }
 }

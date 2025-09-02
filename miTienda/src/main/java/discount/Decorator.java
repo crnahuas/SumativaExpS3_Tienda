@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package discount;
 
+import java.math.BigDecimal;
+import model.Product;
+
 /**
- *
- * @author cristian
+ * Clase abstracta Decorator. Envuelve un
+ * Component y delega su comportamiento.
  */
-public class Decorator {
-    
+public abstract class Decorator implements Component {
+
+    protected final Component wrappee;
+
+    protected Decorator(Component wrappee) {
+        this.wrappee = wrappee;
+    }
+
+    @Override
+    public BigDecimal getFinalPrice(Product product) {
+        return wrappee.getFinalPrice(product);
+    }
 }

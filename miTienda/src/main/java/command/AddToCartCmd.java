@@ -1,13 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package command;
 
+import controller.CartCtrl;
+import model.Product;
+
 /**
- *
- * @author cristian
+ * Command: agregar un producto al carrito.
  */
-public class AddToCartCmd {
-    
+public class AddToCartCmd implements Command {
+
+    private final CartCtrl cartCtrl;
+    private final Product product;
+    private final int quantity;
+
+    public AddToCartCmd(CartCtrl cartCtrl, Product product, int quantity) {
+        this.cartCtrl = cartCtrl;
+        this.product = product;
+        this.quantity = quantity;
+    }
+
+    @Override
+    public void Ejecutar() {
+        cartCtrl.addProduct(product, quantity);
+    }
 }

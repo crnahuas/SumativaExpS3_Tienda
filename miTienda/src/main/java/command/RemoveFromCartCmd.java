@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package command;
 
+import controller.CartCtrl;
+
 /**
- *
- * @author cristian
+ * Command: eliminar un producto del carrito por ID.
  */
-public class RemoveFromCartCmd {
-    
+public class RemoveFromCartCmd implements Command {
+
+    private final CartCtrl cartCtrl;
+    private final String productId;
+
+    public RemoveFromCartCmd(CartCtrl cartCtrl, String productId) {
+        this.cartCtrl = cartCtrl;
+        this.productId = productId;
+    }
+
+    @Override
+    public void Ejecutar() {
+        cartCtrl.removeProductById(productId);
+    }
 }

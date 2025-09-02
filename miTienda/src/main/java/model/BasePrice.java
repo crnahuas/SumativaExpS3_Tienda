@@ -1,10 +1,10 @@
-package discount;
+package model;
 
+import discount.Component;
 import java.math.BigDecimal;
-import model.Product;
 
 /**
- * Componente concreto: precio base (sin descuento).
+ * Componente concreto: precio sin descuento.
  */
 public class BasePrice implements Component {
 

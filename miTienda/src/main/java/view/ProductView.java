@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view;
 
+import java.util.List;
+import model.Product;
+
 /**
- *
- * @author cristian
+ * Vista simple de catálogo.
  */
 public class ProductView {
-    
+
+    /**
+     * Imprime catálogo con id, nombre, categoría y precio.
+     */
+    public void render(List<Product> products) {
+        System.out.println("=== Catálogo de productos ===");
+        for (Product p : products) {
+            System.out.printf("- [%s] %s | Cat: %s | Precio: $%s%n",
+                    p.getId(), p.getName(), p.getCategory(), p.getPrice());
+        }
+        System.out.println();
+    }
 }

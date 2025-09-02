@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package discount;
 
+import java.math.BigDecimal;
+import model.Product;
+
 /**
- *
- * @author cristian
+ * Interfaz requerida por la pauta: dada un Product, retorna su precio final.
  */
-public class Component {
-    
+public interface Component {
+
+    /**
+     * Retorna el precio final del producto según la cadena de descuentos.
+     * @param product
+     * @return 
+     */
+    BigDecimal getFinalPrice(Product product);
 }

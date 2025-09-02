@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package command;
 
+import controller.DiscountCtrl;
+import java.math.BigDecimal;
+
 /**
- *
- * @author cristian
+ * Command: aplicar/limpiar descuento GLOBAL.
  */
-public class GlobalDiscountCmd {
-    
+public class GlobalDiscountCmd implements Command {
+
+    private final DiscountCtrl discountCtrl;
+    private final BigDecimal percentageOrNull; // 0..1 (null = limpiar)
+
+    public GlobalDiscountCmd(DiscountCtrl discountCtrl, BigDecimal percentageOrNull) {
+        this.discountCtrl = discountCtrl;
+        this.percentageOrNull = percentageOrNull;
+    }
+
+    @Override
+    public void Ejecutar() {
+        discountCtrl.setGlobalPercentage(percentageOrNull);
+    }
 }
